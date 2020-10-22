@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="趣相亲接口测试项目" parallel="tests" thread-count="6">
+
+    <test name="趣相亲接口测试" preserve-order="true">
+        <classes>
+            <class name="QXQ.testcase.Testcase">
+                <methods>
+                    <!--<include name="checkmaleLogin"/>-->
+                    <!--<include name="checkmaleReg"/>-->
+                    <!--<include name="checkmalefateList"/>-->
+                    <!--<include name="checkonlineLiveRoomList"/>-->
+                    <!--<include name="checkonmalejoinRoom"/>-->
+                    <include name="checkonliveUserSetting"/>
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <listeners>
+        <listener class-name="QXQ.listener.ExtentTestNGITestListener"/>
+    </listeners>
+
+</suite>

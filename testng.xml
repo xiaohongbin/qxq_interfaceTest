@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="趣相亲接口测试项目" parallel="tests" thread-count="1">
+
+    <suite-files>
+        <suite-file path="qxq.xml"/>
+    </suite-files>
+
+    <listeners>
+        <listener class-name="QXQ.listener.ExtentTestNGITestListener"/>
+    </listeners>
+
+</suite>
