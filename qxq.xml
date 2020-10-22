@@ -6,11 +6,11 @@
         <classes>
             <class name="QXQ.testcase.Testcase">
                 <methods>
-                    <!--<include name="checkmaleLogin"/>-->
-                    <!--<include name="checkmaleReg"/>-->
-                    <!--<include name="checkmalefateList"/>-->
-                    <!--<include name="checkonlineLiveRoomList"/>-->
-                    <!--<include name="checkonmalejoinRoom"/>-->
+                    <include name="checkmaleLogin"/>
+                    <include name="checkmaleReg"/>
+                    <include name="checkmalefateList"/>
+                    <include name="checkonlineLiveRoomList"/>
+                    <include name="checkonmalejoinRoom"/>
                     <include name="checkonliveUserSetting"/>
 
 
