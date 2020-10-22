@@ -257,7 +257,6 @@ public class QxpAPI   {
         JSONArray userInterests = responseBody.getJSONObject("data").getJSONObject("userSettingView").getJSONObject("userInfo").getJSONArray("userInterests");
         Integer num = userInterests.size();
         log.info("检查女嘉宾爱好设置");
-        String hongniang,nvzhubo;
         if ((num == 0)) {
             log.info("女嘉宾没有设置爱好");
         }else{
