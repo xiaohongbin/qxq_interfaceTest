@@ -6,6 +6,7 @@
         <classes>
             <class name="QXQ.testcase.Testcase">
                 <methods>
+                    
                     <include name="checkmaleLogin"/>
                     <include name="checkmaleReg"/>
                     <include name="checkmalefateList"/>
