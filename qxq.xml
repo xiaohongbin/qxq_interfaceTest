@@ -9,11 +9,11 @@
 
                     <!--<include name="checkmaleLogin"/>-->
                     <!--<include name="checkmaleReg"/>-->
-                    <!--<include name="checkmalefateList"/>-->
+                    <include name="checkmalefateList"/>
                     <!--<include name="checkonlineLiveRoomList"/>-->
                     <!--<include name="checkonmalejoinRoom"/>-->
                     <!--<include name="checkonliveUserSetting"/>-->
-                    <include name="checkappointmentList"/>
+                    <!--<include name="checkappointmentList"/>-->
 
 
                 </methods>

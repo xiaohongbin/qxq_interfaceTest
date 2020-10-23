@@ -119,18 +119,17 @@ public class QxpAPI   {
         //获取列表用户数量
         Integer sum = responseBody.getJSONObject("data").getInteger("sum");
         log.info("检查缘分列表数量是否正确");
-        if (sum < 19) {
+        if (sum == 0) {
             writeinfo.interfaceData(time, url, body_string, responseCode, responseBody);
             Assert.fail("，缘分列表数量错误：" + sum);
         }
         log.info("缘分列表数量："+sum+"个");
-
+        JSONArray fateList = responseBody.getJSONObject("data").getJSONArray("fateList");
 //        Integer size = responseBody.getJSONObject("data").getJSONArray("fateList").size();
 //        if(!(size == 20)){
 //            writeinfo.interfaceData(time,url,body_string,responseCode,responseBody);
 //        }
         log.info("获取直播用户");
-        JSONArray fateList = responseBody.getJSONObject("data").getJSONArray("fateList");
         Integer num = 0;
         for(int i = 0;i < fateList.size();i++){
             JSONObject oo = fateList.getJSONObject(i);
@@ -140,6 +139,22 @@ public class QxpAPI   {
             }
         }
         log.info("一共有"+num+"个直播用户");
+        log.info("检查列表中是否有重复用户");
+        boolean flag = true;
+        for(int i = 0;i< sum-1;i++){
+            for(int j = 1;j < sum;j++){
+                if(fateList.getJSONObject(i).getString("userId")==fateList.getJSONObject(j).getString("userId")){
+                    flag =false;
+                    log.info("重复的ID："+fateList.getJSONObject(i).getString("userId"));
+                    break;
+                }
+            }
+        }
+        if(flag){
+            log.info("缘分列表没有重复用户");
+        }else{
+            Assert.fail("缘分列表有重复数据");
+        }
 
     }
     /**
