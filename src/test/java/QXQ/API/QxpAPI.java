@@ -270,6 +270,40 @@ public class QxpAPI   {
             }
         }
     }
+    /**
+     * 男用户进入房间
+     * 查看更多嘉宾
+     */
+    public void appointmentList()throws IOException{
+        this.maleReg();
+        long timestamp = System.currentTimeMillis();
+        String aurl =InterfaceConstants.HOST+"/liveblinddate/appointmentList?";
+//        String body_string ="{\"platformInfo\": {\"fid\": 689999,\"maxClick\": \"56623\",\"release\": \"2020090310\",\"pid\": \"52A2971D4B0A3269FC98A6E444F20DC0\",\"imsi\": \"52A2971D4B0A3269FC98A6E444F20DC0\",\"ua\": \"\",\"versionName\": \"5.6.4\",\"systemVersion\": \"9\",\"mac\": \"B4:0F:B3:7E:A4:A3\",\"platform\": \"3\",\"baseType\": \"roseLive\",\"phonetype\": \"vivo_vivo Z1\",\"operators\": 2,\"mobileIP\": \"192.168.130.162\",\"product\": \"9\",\"netType\": 2,\"h\": 2201,\"version\": \"5.6.4\",\"versionCode\": \"1001\",\"yyCode\": \"a9559709c0a6ed74eaace7ab431e83f2\",\"version2\": \"40050604\",\"w\": 1080,\"imei\": \"862226043685179\",\"packName\": \"com.meigui.mgxq\",\"did\": \"DuV3pstKI05lWtPthv7K5mAu3yOgxtFNJr/8B08yBCb+ULZgsl1KJFAmeqfz7uQmR9BIWdCX3uZUM2146VUr678g\"},\"targetUserId\": \""+nvjiabinId+"\",\"source\": \"101\"}";
+        String body_stringA=re.readdata(7,7);
+        String body_string = body_stringA+"\"markerUserId\": \""+sid+"\"}";
+        url = client.requestHeaderInHashA(timestamp,aurl,token,sid);
+//        System.out.println("url:"+body_string);
+
+        time = writeinfo.getTime();
+        res = client.http_post(url, body_string);
+        responseBody = client.getBodyInJSON();
+        responseCode = client.getCodeInNumber();
+        responseHeads = client.getHeaderInHash();
+        //获取房间女嘉宾爱好
+        JSONArray liveAppointmentsInfoList = responseBody.getJSONObject("data").getJSONArray("liveAppointmentsInfoList");
+        Integer num = liveAppointmentsInfoList.size();
+        log.info("检查更多女嘉宾列表是否显示正常");
+        if ((num == 0)) {
+            writeinfo.interfaceData(time, url, body_string, responseCode, responseBody);
+            Assert.fail("直播间点击更多嘉宾，展示异常");
+        }else{
+            log.info("直播间点击更多嘉宾,展示女嘉宾："+num+"个\n");
+            for( int i = 0;i < num;i++){
+                String tagName = liveAppointmentsInfoList.getJSONObject(i).getString("nickName");
+                log.info(tagName+"；");
+            }
+        }
+    }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {

@@ -34,5 +34,10 @@ public class Testcase {
         QxpAPI qxqAPI = new QxpAPI();
         qxqAPI.liveUserSetting();
     }
+    @Test(description = "检查直播间更多女嘉宾列表展示情况")
+    public void checkappointmentList() throws Exception {
+        QxpAPI qxqAPI = new QxpAPI();
+        qxqAPI.appointmentList();
+    }
 
 }

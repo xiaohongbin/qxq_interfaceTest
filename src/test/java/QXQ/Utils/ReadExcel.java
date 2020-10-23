@@ -27,7 +27,7 @@ public class ReadExcel {
 //			//写入excel数据
             sh1.getRow(rownum - 1).createCell(cellnum + 1).setCellValue("Pass");
 //			// 保存文件(同一个文件名);结果另存为文件(不同的文件名)
-            FileOutputStream fout = new FileOutputStream(new File(".\\datafile\\huluInterfaceStatus.xlsx"));
+            FileOutputStream fout = new FileOutputStream(new File(".\\datafile\\qxqInterfaceStatus.xlsx"));
 //			//覆盖写入内容
             wb.write(fout);
 //			// 关闭文件
@@ -49,7 +49,7 @@ public class ReadExcel {
     public String read1(int rownum, int cellnum) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\hulu.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -90,7 +90,7 @@ public class ReadExcel {
     public String read2(int rownum, int cellnum) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\hulu.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -127,7 +127,7 @@ public class ReadExcel {
     public String readLoginInformation(int rownum, int cellnum) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\hulu.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -165,7 +165,7 @@ public class ReadExcel {
     public void setPass(int rownum, int cellnum, int totalCount) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\hulu.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -201,7 +201,7 @@ public class ReadExcel {
     public void setPassZero(int rownum, int cellnum, int Zero) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\hulu.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -242,7 +242,7 @@ public class ReadExcel {
     public void setPass(int rownum, int cellnum, String account, String password, String SessionId, String token, int time, String qudao) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\hulu.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -274,7 +274,7 @@ public class ReadExcel {
     public void setPass(int rownum, int cellnum) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\huluInterface.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -289,7 +289,7 @@ public class ReadExcel {
 //			//写入excel数据
             sh1.getRow(rownum - 1).createCell(cellnum + 1).setCellValue("pass");
 //			// 保存文件(同一个文件名);结果另存为文件(不同的文件名)
-            FileOutputStream fout = new FileOutputStream(new File(".\\datafile\\huluInterfaceStatus.xlsx"));
+            FileOutputStream fout = new FileOutputStream(new File(".\\datafile\\qxqInterfaceStatus.xlsx"));
 //			//覆盖写入内容
             wb.write(fout);
 //			// 关闭文件
@@ -302,7 +302,7 @@ public class ReadExcel {
     public void WriteData(int rownum, int cellnum, String num)  {
          try {
         // 指定excel的路径
-        File src = new File(".\\datafile\\hulu.xlsx");
+        File src = new File(".\\datafile\\qxqInterface.xlsx");
         // 加载文件
         FileInputStream fis = new FileInputStream(src);
         // 加载workbook
@@ -330,7 +330,7 @@ public class ReadExcel {
     public void setFail(int rownum, int cellnum) {
         try {
             // 指定excel的路径
-            File src = new File(".\\datafile\\huluInterface.xlsx");
+            File src = new File(".\\datafile\\qxqInterface.xlsx");
             // 加载文件
             FileInputStream fis = new FileInputStream(src);
             // 加载workbook
@@ -345,7 +345,7 @@ public class ReadExcel {
 //			//写入excel数据
             sh1.getRow(rownum - 1).createCell(cellnum + 1).setCellValue("Fail");
 //			// 保存文件(同一个文件名);结果另存为文件(不同的文件名)
-            FileOutputStream fout = new FileOutputStream(new File(".\\datafile\\huluInterfaceStatus.xlsx"));
+            FileOutputStream fout = new FileOutputStream(new File(".\\datafile\\qxqInterfaceStatus.xlsx"));
 //			//覆盖写入内容
             wb.write(fout);
 //			// 关闭文件
