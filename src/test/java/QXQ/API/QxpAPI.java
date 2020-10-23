@@ -119,14 +119,17 @@ public class QxpAPI   {
         //获取列表用户数量
         Integer sum = responseBody.getJSONObject("data").getInteger("sum");
         log.info("检查缘分列表数量是否正确");
-        if (!(sum == 20)) {
+        if (sum < 19) {
             writeinfo.interfaceData(time, url, body_string, responseCode, responseBody);
             Assert.fail("，缘分列表数量错误：" + sum);
         }
-        Integer size = responseBody.getJSONObject("data").getJSONArray("fateList").size();
-        if(!(size == 20)){
-            writeinfo.interfaceData(time,url,body_string,responseCode,responseBody);
-        }
+        log.info("缘分列表数量："+sum+"个");
+
+//        Integer size = responseBody.getJSONObject("data").getJSONArray("fateList").size();
+//        if(!(size == 20)){
+//            writeinfo.interfaceData(time,url,body_string,responseCode,responseBody);
+//        }
+        log.info("获取直播用户");
         JSONArray fateList = responseBody.getJSONObject("data").getJSONArray("fateList");
         Integer num = 0;
         for(int i = 0;i < fateList.size();i++){
